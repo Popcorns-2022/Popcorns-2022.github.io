@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title><style>
+
+</style>
+</head>
+<body>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>小爆AI-“梗上一层楼”风格</title>
+<style>
+
+* {
+list-style: none;
+}
+
+.box {
+margin: 50px auto;
+width: 100%;
+position: relative;
+text-align: center;
+}
+
+ul {
+width: 100%;
+padding: 2px;
+min-height: 500px;
+overflow-y: auto;
+border: 2px solid #666;
+border-radius: 5px;
+text-align: center;
+float: center;
+}
+
+li {
+padding: 8px;
+margin: 2px;
+background: #ccc;
+float: left;
+min-height: 30px;
+text-align:left;
+border-radius: 10px;
+clear: both;
+}
+
+.my-msg {
+min-height: 30px;
+text-align:right;
+float: right;
+background: #58bc58;
+color: #fff
+}
+
+.text {
+margin: 5px;
+width: 40%;
+min-height: 30px;
+}
+
+.status {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+text-align: center;
+color: #555;
+display: none;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<ul>
+<big><b>小爆AI</b></big>
+<br>
+<small>（C）2022 Coconut</small>
+<br>
+<hr>
+<small>“梗上一层楼”风格</small>
+<br>
+</ul>
+
+<from>
+<input type="text" class="text"/>
+<input type="submit" value="发送" class="button" id="auto""/>
+</from>
+
+<br><br>
+<div class="status">对方正在输入....</div>
+</div>
+<script>
+oBtn = document.querySelector('.button');
+oStatus = document.querySelector('.status');
+oText = document.querySelector('.text');
+oUl = document.querySelector('ul');
+document.onkeydown = function(e){
+if(!e) e = window.event;//火狐中是 window.event
+if((e.keyCode || e.which) == 13){
+document.getElementById("auto").click();
+}
+}
+oBtn.onclick = function () {
+var text = oText.value;
+console.log(text);
+oText.value = ''; //清空输入框,不能用text
+var oLi = document.createElement('li');
+oLi.innerText = text;
+console.log(oLi.innerText);
+oLi.classList.add('my-msg');
+oUl.append(oLi)
+oStatus.style.display = 'block';
+
+var q = ["你好",
+"你有什么特长",
+"你相信谁",
+"你是哪里人",
+"你会背书吗",
+"你是谁",
+"你爱吃什么",
+"你真棒",
+"你会跳舞吗",
+"你认识阿伟吗",
+"你会唱歌吗",
+"什么是性侵害",
+"你会模仿谁",
+"你会开直播吗"];
+
+var a = ["雷猴",
+"我的盆骨最端正，我的大腿外侧没有duiduiduidui……",
+"我相信光，迪迦！",
+"我是云南的，云南怒江的……",
+"锄禾日当午，汗滴禾下土……",
+"潘周聃，29岁，硕士毕业于苏黎世联邦理工大学",
+"雪糕刺客",
+"栓Q",
+["会呢，我还会跳《只因你太美》",
+"会呢，我还会跳《本草纲目》",
+"会呢，我还会跳《小鸡恰恰舞》",
+"会呢，我还会跳《社会很单纯》"],
+"杰哥不要啦",
+["会呢，我还会唱《孤勇者》",
+"会呢，我还会唱《听我说谢谢你》",
+"会呢，我还会唱《螺丝刀》",
+"会呢，我还会唱《爱你》"],
+"正所谓杰哥名言：“让我看看！”",
+"我会模仿KFC的可达鸭",
+"但我喜欢看直播，喜欢进董宇辉的直播间"];
+ 
+var empty = ["焯！我竟然没听明白","啊哈哈哈哈哈，鸡汤来咯——","这么说，你很勇哦！来，让我看看！","你没事吧？你没事吧？没事就吃溜溜梅！","退！退！退！","不可以涩涩","","","",];
+
+var index = q.indexOf(text);
+var responseText = index == -1 ? empty[getNumber(0, empty.length - 1)] : (!Array.isArray(a[index]) ? a[index] :a[index][getNumber(0, a[index].length - 1)]);
+var oLiB = document.createElement("li");
+oLiB.innerText = responseText;
+setTimeout(() => {
+oUl.appendChild(oLiB);
+oStatus.style.display = 'none'
+console.log('1秒');
+console.log("最大时间和最小时间：", this.hhh);
+}, getNumber(300, 3000));
+
+function getNumber(min, max) {
+
+return hhh = parseInt(Math.random() * (max - min + 1) + min)
+}
+}
+</script>
+</body>
+</html>
+<script>
+
+</script>
+</body>
+</html>
