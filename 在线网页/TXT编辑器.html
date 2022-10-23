@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件下载</title>
+</head>
+
+<body>
+    <textarea id="text" name="" cols="50" rows="10" placeholder="文件内容"></textarea>
+    <br>
+    <button id="btn">下载文件</button>
+    <script>
+        let text = document.querySelector("#text"),
+            btn = document.querySelector("#btn");
+        
+        btn.addEventListener('click',function(){
+            let content = text.value
+            download(content)
+        })
+        
+        function download(content){
+            var blob = new Blob([content]);
+            var aLink = document.createElement('a');
+            aLink.download = 'json.txt';
+            aLink.href = URL.createObjectURL(blob);
+            document.body.appendChild(aLink);
+            aLink.click();
+            document.body.removeChild(aLink);
+        }
+    </script>
+
+
+</body>
+
+</html>
